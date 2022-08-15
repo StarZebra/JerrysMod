@@ -1,0 +1,12 @@
+{
+  "package": "me.jerrysmod.mixin",
+  "refmap": "mixins.jerrysmod.refmap.json",
+  "minVersion": "0.7",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+  ],
+  "client": [
+    "MixinGuiMainMenu",
+    "NickHiderMixin"
+  ]
+}
