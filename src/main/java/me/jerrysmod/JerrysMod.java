@@ -23,13 +23,13 @@ public class JerrysMod {
     public void preInit(FMLPreInitializationEvent event){
         if(!dir.exists()) dir.mkdirs();
     
-        MinecraftForge.EVENT_BUS.register(new DungeonMeterRuns());
+        //MinecraftForge.EVENT_BUS.register(new DungeonMeterRuns());
         
     }
     
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-        MinecraftForge.EVENT_BUS.register(new Utils());
-        MinecraftForge.EVENT_BUS.register(new TickEndEvent());
+        //MinecraftForge.EVENT_BUS.register(new Utils());
+        //MinecraftForge.EVENT_BUS.register(new TickEndEvent());
     }
 }
