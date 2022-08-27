@@ -16,20 +16,19 @@ public class JerrysMod {
     
     public static final Minecraft mc = Minecraft.getMinecraft();
     public static final File dir = new File(new File(mc.mcDataDir, "config"), "jerry");
-    public static boolean enabled = true;
     public static final String MOD_ID = "jerryaddons";
+    
     
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event){
         if(!dir.exists()) dir.mkdirs();
-    
-        //MinecraftForge.EVENT_BUS.register(new DungeonMeterRuns());
         
+        MinecraftForge.EVENT_BUS.register(new DungeonMeterRuns());
     }
     
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-        //MinecraftForge.EVENT_BUS.register(new Utils());
-        //MinecraftForge.EVENT_BUS.register(new TickEndEvent());
+        MinecraftForge.EVENT_BUS.register(new Utils());
+        MinecraftForge.EVENT_BUS.register(new TickEndEvent());
     }
 }
