@@ -1,6 +1,7 @@
 package me.jerrysmod.features;
 
 import me.jerrysmod.events.RenderEntityModelEvent;
+import me.jerrysmod.utils.LocationUtils;
 import me.jerrysmod.utils.OutlineUtils;
 import me.jerrysmod.utils.Utils;
 import net.minecraft.entity.Entity;
@@ -24,7 +25,7 @@ public class NotSoSneakyCreeper {
 	
 	@SubscribeEvent
 	public void onBeforeRenderEntity(RenderLivingEvent.Pre<EntityLivingBase> event){
-		if(Utils.inSkyBlock){
+		if(Utils.inSkyBlock && LocationUtils.onIsland(LocationUtils.Island.DEEP_CAVERNS)){
 			if(event.entity.isInvisible()){
 				if(event.entity instanceof EntityCreeper){
 					event.entity.setInvisible(false);
@@ -35,7 +36,7 @@ public class NotSoSneakyCreeper {
 	
 	@SubscribeEvent
 	public void onEntityJoinWorld(EntityJoinWorldEvent event){
-		if(Utils.inSkyBlock){
+		if(Utils.inSkyBlock && LocationUtils.onIsland(LocationUtils.Island.DEEP_CAVERNS)){
 			if(event.entity instanceof EntityCreeper){
 				highlightEntity(event.entity, Color.GREEN);
 			}

@@ -44,4 +44,15 @@ public class Utils {
 		return JerrysMod.mc.thePlayer.openContainer.inventorySlots.get(0).inventory.getName();
 	}
 	
+	@SafeVarargs
+	public static <T> T firstNotNull(T...args) {
+		for(T arg : args) {
+			if(arg != null) {
+				return arg;
+			}
+		}
+		return null;
+	}
+	
+	
 }
