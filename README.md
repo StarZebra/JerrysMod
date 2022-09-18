@@ -1,6 +1,6 @@
 # JerrysMod
 Mod of Jerry
-
+(I advice to not use this mod until it has a config unless you want all features to be enabled at all times)
 ## Features
 
 * Your name is now Jerry forever.
