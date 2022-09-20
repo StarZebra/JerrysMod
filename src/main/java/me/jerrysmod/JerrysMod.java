@@ -4,6 +4,7 @@ import me.jerrysmod.events.TickEndEvent;
 import me.jerrysmod.features.ColoredGlassFinder;
 import me.jerrysmod.features.DungeonMeterRuns;
 import me.jerrysmod.features.NotSoSneakyCreeper;
+import me.jerrysmod.features.RatFinder;
 import me.jerrysmod.utils.KeybindUtils;
 import me.jerrysmod.utils.LocationUtils;
 import me.jerrysmod.utils.Utils;
@@ -41,6 +42,7 @@ public class JerrysMod {
         MinecraftForge.EVENT_BUS.register(new ColoredGlassFinder());
         MinecraftForge.EVENT_BUS.register(new DungeonMeterRuns());
         MinecraftForge.EVENT_BUS.register(new NotSoSneakyCreeper());
+        MinecraftForge.EVENT_BUS.register(new RatFinder());
     
         for(KeyBinding keyBinding : KeybindUtils.keyBindings.values()) {
             ClientRegistry.registerKeyBinding(keyBinding);
