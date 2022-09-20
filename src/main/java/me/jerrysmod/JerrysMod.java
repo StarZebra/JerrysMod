@@ -23,8 +23,8 @@ public class JerrysMod {
     
     public static final Minecraft mc = Minecraft.getMinecraft();
     public static final File dir = new File(new File(mc.mcDataDir, "config"), "jerry");
-    public static final String MOD_ID = "jerryaddons";
-    public static final String MOD_NAME = "JerryMod";
+    public static final String MOD_ID = "jerrysmod";
+    public static final String MOD_NAME = "JerrysMod";
     
     
     @Mod.EventHandler

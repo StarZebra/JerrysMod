@@ -16,7 +16,7 @@ public class Utils {
 	}
 	
 	public static void sendMessageWithPrefix(String message) {
-		(Minecraft.getMinecraft()).thePlayer.addChatMessage(new ChatComponentText("§8[§bJerryAddons§8] §7" + message));
+		(Minecraft.getMinecraft()).thePlayer.addChatMessage(new ChatComponentText("§8[§bJerrysMod§8] §7" + message));
 	}
 	
 	private int ticks = 0;
