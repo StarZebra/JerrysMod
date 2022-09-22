@@ -8,3 +8,12 @@ Mod of Jerry
 * Shows amount of dungeon runs required below dungeon score in new dungeon RNG Meter
 * Make sneaky creepers visible (Turn off patcher entity culling for esp to work)
 * Highlight glass in crystal hollows (it has a keybind to toggle, its 'G' as default)
+* Finds rats in your hub lobby
+
+## Commands
+
+/getspeed <ticks> 
+How much mining speed you need for that tick in each gemstone. 
+  
+/getticks <mining speed>
+What your ticks are for each gemstone with that mining speed 
