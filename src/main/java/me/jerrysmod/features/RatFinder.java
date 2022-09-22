@@ -40,9 +40,6 @@ public class RatFinder {
 				}
 			}
 		}
-		if(event.every(40)){
-			System.out.println(scanned);
-		}
 		if(event.every(400)){
 			scanned = false;
 		}

@@ -1,5 +1,7 @@
 package me.jerrysmod;
 
+import me.jerrysmod.commands.MiningTickCommand;
+import me.jerrysmod.commands.TickMiningCommand;
 import me.jerrysmod.events.TickEndEvent;
 import me.jerrysmod.features.ColoredGlassFinder;
 import me.jerrysmod.features.DungeonMeterRuns;
@@ -10,6 +12,7 @@ import me.jerrysmod.utils.LocationUtils;
 import me.jerrysmod.utils.Utils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
+import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
@@ -31,6 +34,9 @@ public class JerrysMod {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event){
         if(!dir.exists()) dir.mkdirs();
+    
+        ClientCommandHandler.instance.registerCommand(new MiningTickCommand());
+        ClientCommandHandler.instance.registerCommand(new TickMiningCommand());
         
     }
     
