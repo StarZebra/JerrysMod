@@ -12,8 +12,8 @@ Mod of Jerry
 
 ## Commands
 
-/getspeed <ticks> 
+/getspeed (ticks)
 How much mining speed you need for that tick in each gemstone. 
   
-/getticks <mining speed>
+/getticks (mining speed)
 What your ticks are for each gemstone with that mining speed 
