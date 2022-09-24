@@ -52,6 +52,7 @@ public class RatFinder {
 				scanned = true;
 				if(!rats.isEmpty() && JerrysMod.mc.theWorld != null && JerrysMod.mc.thePlayer != null && !foundRat){
 					Utils.sendMessageWithPrefix("§7Found §c" + rats.size() + " §7rats in this hub.");
+					
 					foundRat = true;
 				}else if(rats.isEmpty()){
 					foundRat = false;
@@ -69,6 +70,7 @@ public class RatFinder {
 		if(Utils.inSkyBlock && LocationUtils.onIsland(LocationUtils.Island.HUB)){
 			if(event.entity instanceof EntityZombie && ((EntityZombie) event.entity).isChild()){
 				rats.remove(event.entity);
+				
 			}
 		}
 	}

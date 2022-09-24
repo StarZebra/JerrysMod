@@ -3,6 +3,7 @@ package me.jerrysmod.features;
 import me.jerrysmod.JerrysMod;
 import me.jerrysmod.events.BlockChangeEvent;
 import me.jerrysmod.events.TickEndEvent;
+import me.jerrysmod.tempconfig.Config;
 import me.jerrysmod.utils.KeybindUtils;
 import me.jerrysmod.utils.LocationUtils;
 import me.jerrysmod.utils.RenderUtils;
@@ -127,17 +128,17 @@ public class ColoredGlassFinder {
 	private static boolean isGemstoneEnabled(Gemstone gemstone) {
 		switch(gemstone) {
 			case RUBY:
-				return true;
+				return Config.rubyEsp;
 			case AMETHYST:
-				return true;
+				return Config.amethystEsp;
 			case JADE:
-				return true;
+				return Config.jadeEsp;
 			case SAPPHIRE:
-				return true;
+				return Config.sapphireEsp;
 			case AMBER:
-				return true;
+				return Config.amberEsp;
 			case TOPAZ:
-				return true;
+				return Config.topazEsp;
 			default:
 				return false;
 		}

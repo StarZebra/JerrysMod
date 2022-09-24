@@ -1,5 +1,6 @@
 package me.jerrysmod;
 
+import me.jerrysmod.commands.GlassFinderCommand;
 import me.jerrysmod.commands.MiningTickCommand;
 import me.jerrysmod.commands.TickMiningCommand;
 import me.jerrysmod.events.TickEndEvent;
@@ -37,6 +38,7 @@ public class JerrysMod {
     
         ClientCommandHandler.instance.registerCommand(new MiningTickCommand());
         ClientCommandHandler.instance.registerCommand(new TickMiningCommand());
+        ClientCommandHandler.instance.registerCommand(new GlassFinderCommand());
         
     }
     
