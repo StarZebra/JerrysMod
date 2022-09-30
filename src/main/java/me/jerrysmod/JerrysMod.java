@@ -4,12 +4,10 @@ import me.jerrysmod.commands.GlassFinderCommand;
 import me.jerrysmod.commands.MiningTickCommand;
 import me.jerrysmod.commands.TickMiningCommand;
 import me.jerrysmod.events.TickEndEvent;
-import me.jerrysmod.features.ColoredGlassFinder;
-import me.jerrysmod.features.DungeonMeterRuns;
-import me.jerrysmod.features.NotSoSneakyCreeper;
-import me.jerrysmod.features.RatFinder;
+import me.jerrysmod.features.*;
 import me.jerrysmod.utils.KeybindUtils;
 import me.jerrysmod.utils.LocationUtils;
+import me.jerrysmod.utils.SmoothRotation;
 import me.jerrysmod.utils.Utils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
@@ -51,6 +49,8 @@ public class JerrysMod {
         MinecraftForge.EVENT_BUS.register(new DungeonMeterRuns());
         MinecraftForge.EVENT_BUS.register(new NotSoSneakyCreeper());
         MinecraftForge.EVENT_BUS.register(new RatFinder());
+        MinecraftForge.EVENT_BUS.register(new PowderMarco());
+        MinecraftForge.EVENT_BUS.register(new SmoothRotation());
     
         for(KeyBinding keyBinding : KeybindUtils.keyBindings.values()) {
             ClientRegistry.registerKeyBinding(keyBinding);
