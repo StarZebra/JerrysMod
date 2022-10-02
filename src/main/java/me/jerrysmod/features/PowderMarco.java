@@ -14,6 +14,7 @@ import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.Vec3;
 import net.minecraft.util.Vec3i;
 import net.minecraftforge.client.event.RenderWorldLastEvent;
+import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.InputEvent;
 import org.lwjgl.input.Keyboard;
@@ -91,5 +92,10 @@ public class PowderMarco {
 			}
 		}
 		return closest;
+	}
+	
+	@SubscribeEvent
+	public void onWorldChange(WorldEvent.Load event) {
+		toggled = false;
 	}
 }

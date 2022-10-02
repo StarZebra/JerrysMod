@@ -46,7 +46,7 @@ public class JerrysMod {
         MinecraftForge.EVENT_BUS.register(new TickEndEvent());
         MinecraftForge.EVENT_BUS.register(new Utils());
         MinecraftForge.EVENT_BUS.register(new ColoredGlassFinder());
-        MinecraftForge.EVENT_BUS.register(new DungeonMeterRuns());
+        //MinecraftForge.EVENT_BUS.register(new DungeonMeterRuns());
         MinecraftForge.EVENT_BUS.register(new NotSoSneakyCreeper());
         MinecraftForge.EVENT_BUS.register(new RatFinder());
         MinecraftForge.EVENT_BUS.register(new PowderMarco());
