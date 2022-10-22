@@ -1,6 +1,7 @@
 package me.jerrysmod.features;
 
 import me.jerrysmod.JerrysMod;
+import me.jerrysmod.tempconfig.Config;
 import me.jerrysmod.utils.Utils;
 import net.minecraft.client.gui.inventory.GuiChest;
 import net.minecraft.inventory.Container;
@@ -24,6 +25,7 @@ public class BudgetPetRules {
 	
 	@SubscribeEvent
 	public void onRightClick(PlayerInteractEvent event){
+		if(!Config.budgetPetRules) return;
 		if(event.action == PlayerInteractEvent.Action.RIGHT_CLICK_AIR || event.action == PlayerInteractEvent.Action.RIGHT_CLICK_BLOCK && JerrysMod.mc.thePlayer.getHeldItem() != null) {
 			if(JerrysMod.mc.thePlayer.getHeldItem() != null && JerrysMod.mc.thePlayer.getHeldItem().getItem() instanceof ItemFishingRod){
 				openPetMenu();
