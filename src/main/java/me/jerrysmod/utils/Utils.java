@@ -3,9 +3,17 @@ package me.jerrysmod.utils;
 import me.jerrysmod.JerrysMod;
 import me.jerrysmod.events.TickEndEvent;
 import net.minecraft.client.Minecraft;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.scoreboard.ScoreObjective;
 import net.minecraft.util.ChatComponentText;
+import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Utils {
 	
@@ -54,5 +62,37 @@ public class Utils {
 		return null;
 	}
 	
+	public static List<String> getItemLore(ItemStack itemStack) {
+		if (itemStack != null) {
+			if (itemStack.hasTagCompound()) {
+				NBTTagCompound display = itemStack.getSubCompound("display", false);
+				
+				if (display != null && display.hasKey("Lore", 9)) {
+					NBTTagList lore = display.getTagList("Lore", 8);
+					
+					List<String> loreAsList = new ArrayList<>();
+					for (int lineNumber = 0; lineNumber < lore.tagCount(); lineNumber++) {
+						loreAsList.add(lore.getStringTagAt(lineNumber));
+					}
+					
+					return Collections.unmodifiableList(loreAsList);
+				}
+			}
+			
+			return Collections.emptyList();
+		} else {
+			throw new NullPointerException("Cannot get lore from null item!");
+		}
+	}
+	
+	public static void sendMessageAsPlayer(String message) {
+		JerrysMod.mc.thePlayer.sendChatMessage(message);
+	}
+	
+	public static void executeCommand(String command) {
+		if(ClientCommandHandler.instance.executeCommand(JerrysMod.mc.thePlayer, command) == 0) {
+			sendMessageAsPlayer(command);
+		}
+	}
 	
 }

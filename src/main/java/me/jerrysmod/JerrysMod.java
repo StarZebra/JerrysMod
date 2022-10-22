@@ -51,6 +51,10 @@ public class JerrysMod {
         MinecraftForge.EVENT_BUS.register(new RatFinder());
         MinecraftForge.EVENT_BUS.register(new PowderMarco());
         MinecraftForge.EVENT_BUS.register(new SmoothRotation());
+        MinecraftForge.EVENT_BUS.register(new BudgetPetRules());
+        //left click block event broken for some reason
+        //MinecraftForge.EVENT_BUS.register(new FakeMining());
+        //MinecraftForge.EVENT_BUS.register(new LoreChangeEvent());
     
         for(KeyBinding keyBinding : KeybindUtils.keyBindings.values()) {
             ClientRegistry.registerKeyBinding(keyBinding);

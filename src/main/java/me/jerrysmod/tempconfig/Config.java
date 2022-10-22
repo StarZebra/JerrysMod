@@ -10,6 +10,8 @@ public class Config {
 	public static boolean jasperEsp = false;
 	public static boolean topazEsp = false;
 	
+	public static boolean budgetPetRules = false;
+	
 	public static void setAmberEsp(boolean amberEsp) {
 		Config.amberEsp = amberEsp;
 	}
@@ -36,5 +38,9 @@ public class Config {
 	
 	public static void setAmethystEsp(boolean amethystEsp) {
 		Config.amethystEsp = amethystEsp;
+	}
+	
+	public static void setBudgetPetRules(boolean budgetPetRules){
+		Config.budgetPetRules = budgetPetRules;
 	}
 }

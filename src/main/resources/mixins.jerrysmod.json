@@ -8,6 +8,8 @@
     "NetworkManagerMixin"
   ],
   "client": [
+    "GuiContainerMixin",
+    "GuiScreenMixin",
     "NickHiderMixin",
     "RenderLivingEntityMixin"
   ]

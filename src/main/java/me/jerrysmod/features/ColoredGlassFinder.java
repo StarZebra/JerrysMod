@@ -8,6 +8,7 @@ import me.jerrysmod.utils.KeybindUtils;
 import me.jerrysmod.utils.LocationUtils;
 import me.jerrysmod.utils.RenderUtils;
 import me.jerrysmod.utils.Utils;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockStainedGlass;
 import net.minecraft.block.BlockStainedGlassPane;
 import net.minecraft.block.state.IBlockState;
@@ -46,17 +47,13 @@ public class ColoredGlassFinder {
 		AMBER(new Color(237, 139, 35), EnumDyeColor.ORANGE),
 		TOPAZ(new Color(249, 215, 36), EnumDyeColor.YELLOW);
 		
+		
 		private final java.awt.Color color;
 		public final EnumDyeColor dyeColor;
 		
 		Gemstone(Color color, EnumDyeColor dyeColor) {
 			this.color = color;
 			this.dyeColor = dyeColor;
-		}
-		
-		Gemstone(Gemstone gemstone) {
-			this.color = gemstone.color;
-			this.dyeColor = gemstone.dyeColor;
 		}
 	}
 	
@@ -95,7 +92,12 @@ public class ColoredGlassFinder {
 							
 							if(!checked.contains(position) && !JerrysMod.mc.theWorld.isAirBlock(position)) {
 								Gemstone gemstone = getGemstone(JerrysMod.mc.theWorld.getBlockState(position));
-								if(gemstone != null) gemstones.put(position, gemstone);
+								Block block = JerrysMod.mc.theWorld.getBlockState(position).getBlock();
+								if(gemstone != null) {
+									gemstones.put(position, gemstone);
+								}else if(position.getY() >= 65 && block == Blocks.lava || block == Blocks.flowing_lava){
+									gemstones.put(position, Gemstone.RUBY);
+								}
 							}
 							checked.add(position);
 							

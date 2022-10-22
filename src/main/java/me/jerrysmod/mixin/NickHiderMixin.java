@@ -21,22 +21,18 @@ public abstract class NickHiderMixin {
 	@Shadow
 	public abstract int getStringWidth(String paramString);
 	
-	@Shadow
-	public abstract int getCharWidth(char paramChar);
-	
-	
 	@Inject(method = {"renderStringAtPos"}, at = {@At("HEAD")}, cancellable = true)
 	private void renderString(String text, boolean shadow, CallbackInfo ci) {
 		if (text != null && text.contains(JerrysMod.mc.getSession().getUsername())) {
 			ci.cancel();
-			renderStringAtPos(text.replaceAll(JerrysMod.mc.getSession().getUsername(), "Jerry"), shadow);
+			renderStringAtPos(text.replaceAll(JerrysMod.mc.getSession().getUsername(), "§3Jerry"), shadow);
 		}
 	}
 	
 	@Inject(method = {"getStringWidth"}, at = {@At("RETURN")}, cancellable = true)
 	private void getStringWidth(String text, CallbackInfoReturnable<Integer> cir) {
 		if (text != null && text.contains(JerrysMod.mc.getSession().getUsername())) {
-			cir.setReturnValue(getStringWidth(text.replaceAll(JerrysMod.mc.getSession().getUsername(), "Jerry")));
+			cir.setReturnValue(getStringWidth(text.replaceAll(JerrysMod.mc.getSession().getUsername(), "§3Jerry")));
 		}
 	}
 }

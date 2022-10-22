@@ -51,6 +51,9 @@ public class GlassFinderCommand extends CommandBase {
 				case "sapphire":
 					Config.setSapphireEsp(!Config.sapphireEsp);
 					gemStatus = Config.sapphireEsp;
+				case "petrules":
+					Config.setBudgetPetRules(!Config.budgetPetRules);
+					gemStatus = Config.budgetPetRules;
 					break;
 			}
 			String gem = args[0].substring(0, 1).toUpperCase() + args[0].substring(1);
